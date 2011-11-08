@@ -1,0 +1,17 @@
+
+-   @place.save
+%h3 New place has been successfully added!
+
+Name:
+= @place.name
+%br
+%br 
+Origin:
+= @place.street
+%br
+%br
+City:   
+=@place.city
+%br
+%br
+= link_to 'Back to place list', places_path 

@@ -1,0 +1,29 @@
+%h1 Listing places
+
+= search_form_for @q do |f|
+  = f.label :name_or_street_or_city_cont
+  = f.text_field :name_or_street_or_city_cont
+  = f.submit "Search"
+  
+%br
+%br
+%table
+  %tr
+    %th Name
+    
+    %th Street
+    
+    %th City
+    %th
+    %th
+
+  - @places.each do |place|
+    %tr
+      %td= link_to place.name,place
+      %td= place.street
+      %td= place.city
+
+%br
+
+= link_to 'New Place', new_place_path
+
